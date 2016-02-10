@@ -1,3 +1,4 @@
+#This will install all the packages needed to run this pipeline
 source("http://bioconductor.org/biocLite.R")
 biocLite("oligo")
 biocLite("limma")

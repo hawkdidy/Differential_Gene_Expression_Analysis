@@ -1,3 +1,5 @@
+#This script will allow you to see the quality of your data and will output a pdf with an image of your microarrays
+
 #checking boxplot of raw data
 par(mar=c(10,4.5,2,1))
 boxplot(rawData,las=3)

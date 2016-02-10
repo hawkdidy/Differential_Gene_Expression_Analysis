@@ -1,3 +1,7 @@
+#This script will remove genes with low variance as well as the affy control probes
+#Then it will fit a linear models to determine the mean values of your genes and use ebayes to shrink the variance
+#a t-test will then be done to get you the DEGs and a volcano plot to visualize 
+
 #filtering of genes, removing all control probes and seeing what is filtered 
 con <- db(pd.hugene.2.0.st)
 

@@ -1,5 +1,6 @@
+#This script will load and normilize your data
 #directory for the data
-mydir <- "C:\\Users\\hakim\\Desktop\\Bioinformatics_Thesis_Concordia_Microarry_Data"
+mydir <- "C:\\Users\\hakim\\Desktop\\Bioinformatics_Thesis_Concordia_Microarry_Data" #insert own directory here
 
 #setting seed for reproducibility
 set.seed(1)

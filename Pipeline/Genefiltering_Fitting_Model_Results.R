@@ -15,7 +15,9 @@ group <- factor(c((rep.int(0,13)),rep.int(1,14),rep.int(2,14)
 design <- model.matrix(~ 0 + group)
 colnames(design) <- c("Intercept","T1","T2","T3", "T4")
 #contrast matrix 
-contrast <- makeContrasts( "Intercept-T1","T1-T2", "T2-T3","T3-T4", levels= design )
+contrast <- makeContrasts( "Intercept-T1","Intercept-T2","Intercept-T3","Intercept-T4"
+                           ,"T1-T2","T1-T3","T1-T4",
+                            "T2-T3","T2-T4","T3-T4", levels= design )
 
 normfit <-eBayes( contrasts.fit( lmFit(normData.filtered$eset, design), contrast) )
 
@@ -31,7 +33,7 @@ Symbol <- getSYMBOL(rownames(probeset.list), "hugene20sttranscriptcluster.db")
 results <- cbind(probeset.list, Symbol)
 
 #writing results to a tab delimated text file
-write.table(probeset.list,file="DEGS1.txt",sep= "\t" )
+write.table(results,file="DEGS_ALL_CONTRAST.txt",sep= "\t" )
 
 #visualizing genes with highest LFC and probably 
 volcanoplot(normfit,highlight=10, coef=2)

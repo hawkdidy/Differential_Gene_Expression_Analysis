@@ -35,4 +35,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 .Rhistory
+.RDataTmp
 packrat/lib*/

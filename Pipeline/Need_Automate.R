@@ -20,3 +20,16 @@ write.table(probeset.listT14,file="DEGS_T14_CONTRAST.txt",sep= "\t" )
 write.table(probeset.listT23,file="DEGS_T23_CONTRAST.txt",sep= "\t" )
 write.table(probeset.listT24,file="DEGS_T24_CONTRAST.txt",sep= "\t" )
 write.table(probeset.listT34,file="DEGS_T34_CONTRAST.txt",sep= "\t" )
+
+x<- c("I","T1","T2","T3","T4")
+all.comb <- combn(x,2)
+coef.value <- paste(all.comb[1,1:10],all.comb[2,1:10],sep="-")
+
+
+var.name <- c("IT1", "IT2", "IT3", "IT4", "T12", "T13", "T14", "T23", "T24", "T34")
+probesetlist.name <- paste("probeset.list",var.name,sep="")
+
+
+for (i in 1:10){
+  probesetlist.name[i] <- topTable(normfit,coef=coef.value[i],number=100000,adjust="BH",lfc=1)
+}

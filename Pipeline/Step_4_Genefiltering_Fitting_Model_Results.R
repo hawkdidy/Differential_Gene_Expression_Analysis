@@ -29,8 +29,8 @@ probeset.list <-topTable(normfit,number=100000, adjust="BH", lfc=1)
 
 
 #Adding gene symbol to dataset 
-#Symbol <- getSYMBOL(rownames(probeset.list), "hugene20sttranscriptcluster.db")
-#results <- cbind(probeset.list, Symbol)
+Symbol <- getSYMBOL(rownames(probeset.list), "hugene20sttranscriptcluster.db")
+results <- cbind(probeset.list, Symbol)
 
 #writing results to a tab delimated text file
 write.table(results,file="DEGS_ALL_CONTRAST.txt",sep= "\t" )

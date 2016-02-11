@@ -36,4 +36,5 @@ Temporary Items
 .apdisk
 .Rhistory
 .RDataTmp
+.RData
 packrat/lib*/

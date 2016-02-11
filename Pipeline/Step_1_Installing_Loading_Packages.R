@@ -1,9 +1,9 @@
 #This will install all the packages needed to run this pipeline
 source("http://bioconductor.org/biocLite.R")
-biocLite("oligo")
-biocLite("limma")
-biocLite("pd.hugene.2.1.st")
-biocLite("hugene20sttranscriptcluster.db")
+#biocLite("oligo")
+#biocLite("limma")
+#biocLite("pd.hugene.2.1.st")
+#biocLite("hugene20sttranscriptcluster.db")
 library(limma)
 library(oligo)
 library(pd.hugene.2.0.st)

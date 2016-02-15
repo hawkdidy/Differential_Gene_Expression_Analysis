@@ -11,4 +11,4 @@ rawData <- read.celfiles(celList, pkgname='pd.hugene.2.0.st')
 #normalizing the data using RMA algorithm
 normData <- rma(rawData, target="core")
 #retreaving feature data
-#featureData(normData) <- getNetAffx(normData, "transcript")
+featureData(normData) <- getNetAffx(normData, "transcript")

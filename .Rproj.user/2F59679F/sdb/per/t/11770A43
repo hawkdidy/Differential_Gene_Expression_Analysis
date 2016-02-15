@@ -1,11 +1,11 @@
 {
     "contents" : "#This will install all the packages needed to run this pipeline\nsource(\"http://bioconductor.org/biocLite.R\")\n#biocLite(\"oligo\")\n#biocLite(\"limma\")\n#biocLite(\"pd.hugene.2.1.st\")\n#biocLite(\"hugene20sttranscriptcluster.db\")\nlibrary(limma)\nlibrary(oligo)\nlibrary(pd.hugene.2.0.st)\nlibrary(genefilter)\nlibrary(annotate)\nlibrary(hugene20sttranscriptcluster.db) \n",
-    "created" : 1455206666832.000,
+    "created" : 1455528640919.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "1709085281",
-    "id" : "F773D0F9",
+    "id" : "11770A43",
     "lastKnownWriteTime" : 1455197419,
     "path" : "~/GitHub/Thesis-Project/Pipeline/Step_1_Installing_Loading_Packages.R",
     "project_path" : "Pipeline/Step_1_Installing_Loading_Packages.R",

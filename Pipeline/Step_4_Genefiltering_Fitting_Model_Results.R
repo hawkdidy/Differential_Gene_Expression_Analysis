@@ -9,7 +9,7 @@ probes.control <- dbGetQuery(con, "select fsetid from featureSet where
                              type in ('3', '5','6','7','8','9','10','11','12','13','14','15','16','17');")[,1]
 
 normData.filtered <- nsFilter(normData, require.entrez=FALSE, remove.dupEntrez=FALSE, feature.exclude = probes.control)
-#normData.filtered$filter.log                    
+normData.filtered$filter.log               
 
 #Creating a design matrix based on the experiment and then a linear model for estimating mean expression values 
 #bayes for shrinking the ste and getting DEGS
@@ -31,6 +31,7 @@ probeset.list <-topTable(normfit,number=100000, adjust="BH", lfc=1)
 #Adding gene symbol to dataset 
 Symbol <- getSYMBOL(rownames(probeset.list), "hugene20sttranscriptcluster.db")
 results <- cbind(probeset.list, Symbol)
+
 
 #writing results to a tab delimated text file
 write.table(results,file="DEGS_ALL_CONTRAST.txt",sep= "\t" )

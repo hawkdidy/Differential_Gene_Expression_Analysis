@@ -2,8 +2,7 @@
 #directory for the data
 mydir <- "C:\\Users\\hakim\\Desktop\\Bioinformatics_Thesis_Concordia_Microarry_Data" #insert own directory here
 
-#setting seed for reproducibility
-set.seed(1)
+
 #listing the files from directory using special CEL file read function
 celList <- list.celfiles(mydir, full.names=TRUE)
 #reading data from cellist and setting annotation package to approiate one for this microarray

@@ -11,6 +11,8 @@ distance <- dist(t(eset),method="maximum")
 clusters <- hclust(distance)
 plot(clusters)
 
+
+
 #making negative images
 Pset = fitProbeLevelModel(rawData)
 

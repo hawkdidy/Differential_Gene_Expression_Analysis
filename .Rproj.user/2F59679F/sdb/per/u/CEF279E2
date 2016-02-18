@@ -1,0 +1,18 @@
+{
+    "contents" : "install.packages(\"devtools\")\nlibrary(\"devtools\")\ndevtools::install_github(\"klutometis/roxygen\")\nlibrary(roxygen2)\n\n\nsetwd(\"C:\\\\Users\\\\hakim\\\\Documents\\\\GitHub\\\\Thesis-Project\")\ncreate(\"hugenedeg\")\n",
+    "created" : 1455785841324.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1449213367",
+    "id" : "CEF279E2",
+    "lastKnownWriteTime" : 32370120545140837,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

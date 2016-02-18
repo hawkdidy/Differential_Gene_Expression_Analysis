@@ -1,4 +1,3 @@
-#This will install all the packages needed to run this pipeline
 source("http://bioconductor.org/biocLite.R")
 #biocLite("oligo")
 #biocLite("limma")
@@ -12,3 +11,4 @@ library(pd.hugene.2.0.st)
 library(genefilter)
 library(annotate)
 library(hugene20sttranscriptcluster.db)
+  

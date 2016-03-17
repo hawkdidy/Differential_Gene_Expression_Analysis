@@ -2,9 +2,9 @@
 
 #checking boxplot of raw data
 par(mar=c(10,4.5,2,1))
-boxplot(rawData,las=3)
+boxplot(rawData,las=3, target = "core")
 #checking boxplot of normalized data
-boxplot(normData,las=3)
+boxplot(normData,las=3, target = "core")
 #hierarchical clustering
 eset <- exprs(normData)
 distance <- dist(t(eset),method="maximum")

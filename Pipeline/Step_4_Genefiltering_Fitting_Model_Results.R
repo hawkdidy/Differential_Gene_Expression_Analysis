@@ -5,7 +5,7 @@
 #filtering of genes, removing all control probes and seeing what is filtered 
 eset <- getMainProbes(normData)
 normData.filtered <- nsFilter(eset, require.entrez = FALSE, 
-                              remove.dupEntrez = FALSE)normData.filtered <- nsFilter(normData, require.entrez=FALSE, remove.dupEntrez=FALSE, feature.exclude = probes.control)
+                              remove.dupEntrez = FALSE)
 normData.filtered$filter.log               
 
 #Creating a design matrix based on the experiment and then a linear model for estimating mean expression values 
@@ -14,15 +14,29 @@ group <- factor(c((rep.int(0,13)),rep.int(1,14),rep.int(2,14)
                   ,rep.int(3,14),rep.int(4,14)))
 
 design <- model.matrix(~ 0 + group)
-colnames(design) <- c("I","T1","T2","T3", "T4")
-#contrast matrix 
-contrast <- makeContrasts( "I-T1","T1-T2","T2-T3","T3-T4",
+colnames(design) <- c("T1","T2","T3","T4", "T5")
+#contrast matrix
+contrast <- makeContrasts( "T1-T2","T1-T3","T1-T4","T1-T5","T2-T3","T2-T4","T2-T5","T3-T4","T3-T5","T4-T5",
+                           levels= design )
+##############
+###Mars 500###
+##############
+#Creating a design matrix based on the experiment and then a linear model for estimating mean expression values 
+#bayes for shrinking the ste and getting DEGS
+group <- factor(c((rep.int(0,6)),rep.int(1,6),rep.int(2,6)
+                  ,rep.int(3,6),rep.int(4,6)))
+
+design <- model.matrix(~ 0 + group)
+colnames(design) <- c("T1","T2","T3","T4", "T5")
+#contrast matrix
+contrast <- makeContrasts( "T1-T2","T1-T3","T1-T4","T1-T5","T2-T3","T2-T4","T2-T5","T3-T4","T3-T5","T4-T5",
                            levels= design )
 
+#normalization and fitting of the model
 normfit <-eBayes( contrasts.fit( lmFit(normData.filtered$eset, design), contrast) )
 
 #getting the list of probes
-probeset.list <-topTable(normfit,number=100000, adjust="BH", lfc=1)
+probeset.list <-topTable(normfit,number=100000, adjust="BH", p.value = 0.05)
 
 
 #Adding gene symbol to dataset 
@@ -31,7 +45,7 @@ results <- cbind(probeset.list, Symbol)
 
 
 #writing results to a tab delimated text file
-write.table(results,file="DEGS_ALL_CONTRAST.txt",sep= "\t" )
+write.table(results,file="MARS500_Gene_list.txt",sep= "\t" )
 
 #visualizing genes with highest LFC and probably 
 volcanoplot(normfit,highlight=10, coef=2)

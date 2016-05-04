@@ -1,0 +1,20 @@
+File created with bingo (c) on Apr 17, 2016 at 2:46:49 PM
+
+ontology: namespace
+curator:  bingo
+
+Selected ontology file : bundle://113.0:1/data/GO_Full
+Selected annotation file : bundle://113.0:1/data/H_sapiens_default
+Discarded evidence codes : 
+Overrepresentation
+Selected statistical test : Hypergeometric test
+Selected correction : Benjamini & Hochberg False Discovery Rate (FDR) correction
+Selected significance level : 0.05
+Testing option : Use whole annotation as reference set
+The selected cluster :
+MORC3	HSH2D	NA	MIR618	
+
+No annotations were retrieved for the following entities:
+NA	MIR618	
+
+GO-ID	p-value	corr p-value	x	n	X	N	Description	Genes in test set

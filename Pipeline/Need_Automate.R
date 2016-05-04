@@ -33,7 +33,7 @@ probeset.list45 <- cbind(probeset.list45, Symbol)
 
 
 
-
+write.table(probeset.list12,file="DEGS_T12_CONTRAST_Mars.txt",sep= "\t" )
 write.table(probeset.list13,file="DEGS_T13_CONTRAST_Mars.txt",sep= "\t" )
 write.table(probeset.list14,file="DEGS_T14_CONTRAST_Mars.txt",sep= "\t" )
 write.table(probeset.list15,file="DEGS_T15_CONTRAST_Mars.txt",sep= "\t" )

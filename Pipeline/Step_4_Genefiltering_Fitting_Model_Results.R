@@ -4,6 +4,7 @@
 
 #filtering of genes, removing all control probes and seeing what is filtered 
 eset <- getMainProbes(normData)
+
 normData.filtered <- nsFilter(eset, require.entrez = FALSE, 
                               remove.dupEntrez = FALSE)
 normData.filtered$filter.log               

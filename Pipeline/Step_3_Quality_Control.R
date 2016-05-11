@@ -56,7 +56,7 @@ ph@data[67,1]
 dim(pmexp[1,])
 dim(pmexp)[1]
 
-hist(rawData[,1:6],lwd=2,which='pm',ylab='Density',xlab='Log2 intensities',main='Histogram of raw data')
+hist(rawData[,1],lwd=2,which='pm',ylab='Density',xlab='Log2 intensities',main = "core")
  
 
-rawData
+hist(rawData)

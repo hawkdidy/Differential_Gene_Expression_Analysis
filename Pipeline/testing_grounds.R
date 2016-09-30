@@ -1,10 +1,10 @@
 #adding pheno data and heatmapping, testing grounds 
 
-phenoData <- read.csv("~/GitHub/Thesis-Project/Pipeline/phenoData.txt", sep="")
+phenoData <- read.csv("~/GitHub/Differential_Gene_Expression_Analysis/Pipeline/phenoData.txt", sep="")
 
 pheno <- phenoData
 
-probeset.list<- head(probeset.list,n=100)
+probeset.list<- head(probeset.list)
 
 
 pData(rawData) <- pheno
@@ -37,16 +37,15 @@ myheatcol <- greenred(75)
 heatmap.2(y, Rowv=as.dendrogram(hr), Colv=as.dendrogram(hc), col=myheatcol, scale="row", density.info="none",
           trace="none", key = FALSE, cexRow = 0.7, cexCol = 0.8, srtRow = NULL, srtCol= 20, 
           labRow = TRUE, main = "Heatmap",  RowSideColors=mycolhc, labCol= TRUE )
+
+
+#all of this is working
 heatmap(y, col=topo.colors(75), scale="none", ColSideColors=t, cexRow=0.5)
 y <- as.matrix(y)
 
 t <- t(pheno[,2])
 ncol(t)
 t<-as.character(t)
-color <- c("#edf8e9","#bae4b3","#74c476","#31a354","#006d2c")
-time<- c("t1","t2","t3","t4","t5")
-
-t <- sub("t5", "#006d2c", t, ignore.case = FALSE)
 
 t = factor(t,levels = c("t1","t2","t3","t4","t5"), 
            labels = c("#edf8e9","#bae4b3","#74c476","#31a354","#006d2c"))
